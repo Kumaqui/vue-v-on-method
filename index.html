@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 使用v-on呼叫 / method寫function</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body id="app">
+  <h1>使用v-on呼叫 / method寫function 建立js事件</h1>
+  <button class="adbtn" v-on:click="add('apple')">加蘋果(apple)</button>
+  <button class="adbtn" v-on:click="add('pineapple')">加鳳梨(pineapple)</button>
+  <button class="adbtn" v-on:click="add('pen')">加筆(pen)</button><br/>
+  <h5>狀態: {{status}}</h5>
+  <h5>列表共有{{fruits.length}}項資料，共有{{totals.pen}}隻筆，共有{{totals.pineapple}}顆鳳梨，共有{{totals.apple}}顆蘋果</h5>
+  <div class="fruit" v-for="(id,fruit) in fruits" track-by="$index">
+    <div class="name">{{id+1}} {{fruit}}</div><img v-if="fruit=='pen'" src="http://simpleicon.com/wp-content/uploads/pen-15.png" alt=""/><img v-if="fruit=='pineapple'" src="https://d30y9cdsu7xlg0.cloudfront.net/png/181946-200.png" alt=""/><img v-if="fruit=='apple'" src="https://cdn-icons-png.flaticon.com/512/154/154870.png" alt=""/>
+    <button v-on:click="remove(id,fruit)">X</button>
+  </div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

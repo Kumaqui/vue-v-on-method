@@ -1,0 +1,37 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+}
+
+body {
+  padding: 20px;
+}
+
+img {
+  width: 30px;
+}
+
+button {
+  background: none;
+  border: none;
+  border: solid 1px #aaa;
+  padding: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: black;
+  color: #fff;
+}
+
+.fruit {
+  border: solid 1px #bbb;
+  width: 200px;
+  padding: 5px;
+}
+.fruit * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.fruit .name {
+  width: 100px;
+}
