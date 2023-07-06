@@ -1,0 +1,15 @@
+body#app
+  h1 使用v-on呼叫 / method寫function 建立js事件
+  button.adbtn(v-on:click="add('apple')") 加蘋果(apple)
+  button.adbtn(v-on:click="add('pineapple')") 加鳳梨(pineapple)
+  button.adbtn(v-on:click="add('pen')") 加筆(pen)
+  br
+  h5 狀態: {{status}}
+  h5 列表共有{{fruits.length}}項資料，共有{{totals.pen}}隻筆，共有{{totals.pineapple}}顆鳳梨，共有{{totals.apple}}顆蘋果
+  
+  .fruit(v-for="(id,fruit) in fruits" track-by='$index')
+    .name {{id+1}} {{fruit}}
+    img(v-if="fruit=='pen'" src="http://simpleicon.com/wp-content/uploads/pen-15.png", alt="")
+    img(v-if="fruit=='pineapple'" src="https://d30y9cdsu7xlg0.cloudfront.net/png/181946-200.png", alt="")
+    img(v-if="fruit=='apple'" src="https://cdn-icons-png.flaticon.com/512/154/154870.png", alt="")
+    button(v-on:click="remove(id,fruit)") X
